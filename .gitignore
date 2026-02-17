@@ -52,9 +52,8 @@ new web site photo/
 *.rar
 *.zip
 
-# Temporary/backup images
-*.copy.jpg
-*copy.jpg
+# Temporary/backup images in root (not in certificate folder)
+/public/SVP*copy.jpg
 
 # Apache config (not needed for Vercel)
 .htaccess
