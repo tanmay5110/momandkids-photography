@@ -39,3 +39,25 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Gallery images (stored in Cloudinary, not needed locally)
+/public/optimized-galleries/
+/public/data/
+
+# Source photos (too large for git)
+new web site photo/
+
+# Compressed archives
+*.rar
+*.zip
+
+# Temporary/backup images
+*.copy.jpg
+*copy.jpg
+
+# Apache config (not needed for Vercel)
+.htaccess
+public/.htaccess
+
+# Export ignore
+.exportignore
