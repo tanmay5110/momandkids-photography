@@ -41,8 +41,13 @@ const portfolioCategories = [
   },
   {
     title: 'Baby Shower',
-    thumbnail: 'baby-shower/201',
+    thumbnail: 'baby-shower/SVP00020NK',
     link: '/gallery/baby-shower',
+  },
+  {
+    title: 'Family Shoot',
+    thumbnail: 'family-shoot/1',
+    link: '/gallery/family-shoot',
   },
 ];
 
@@ -65,7 +70,7 @@ export default function Portfolio() {
           <div className="w-16 h-px bg-[#D4A574] mx-auto"></div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {portfolioCategories.map((category, index) => (
             <div key={index} className="group">
               <Link href={category.link} className="block">
@@ -77,7 +82,7 @@ export default function Portfolio() {
                     src={category.thumbnail}
                     alt={category.title}
                     fill
-                    sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                    sizes="(max-width: 768px) 50vw, 33vw"
                     className="object-cover transition-all duration-700 group-hover:scale-110"
                     draggable={false}
                   />
