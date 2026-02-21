@@ -15,6 +15,7 @@ export default function NamingCeremonyPage() {
         title="Naming Ceremony"
         description="A blessed beginning, beautifully preserved"
         imageCount={images.length}
+        coverImage={images[0]}
       />
       <div className="container mx-auto px-4 py-12">
         <CloudinaryGallery ids={images} />

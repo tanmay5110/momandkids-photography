@@ -15,6 +15,7 @@ export default function DevereshBirthdayPage() {
         title="Deversh 5th Birthday"
         description="Celebrating five wonderful years with joy and colour"
         imageCount={images.length}
+        coverImage={images[0]}
       />
       <div className="container mx-auto px-4 py-12">
         <CloudinaryGallery ids={images} />

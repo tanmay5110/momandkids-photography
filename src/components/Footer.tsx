@@ -9,7 +9,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-10 md:mb-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-lg sm:text-xl font-light mb-3 sm:mb-4 tracking-wide text-[#F5DEB3]">Mom & Kids Photography</h3>
+            <h3 className="text-lg sm:text-xl font-light mb-3 sm:mb-4 tracking-wide text-[#F5DEB3] font-[family-name:var(--font-cormorant)]">Mom & Kids Photography</h3>
             <p className="text-[#C9A66B] mb-4 sm:mb-6 leading-relaxed font-light text-xs sm:text-sm">
               Professional maternity, newborn, and baby photography studio in Pune. Capturing
               your precious moments with artistic vision and care.

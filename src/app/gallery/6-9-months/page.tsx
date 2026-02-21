@@ -12,9 +12,10 @@ export default function SixToNineMonthsPage() {
   return (
     <main className="min-h-screen bg-white">
       <GalleryHeader 
-        title="6-9 Months Baby Gallery"
-        description="Celebrating adorable milestones - sitting up, first giggles, and playful expressions"
+        title="6–9 Months"
+        description="The age of discovery — sitting up, first giggles, curious eyes, and the most adorable expressions captured forever."
         imageCount={images.length}
+        coverImage={images[0]}
       />
       <div className="container mx-auto px-4 py-12">
         <CloudinaryGallery ids={images} />

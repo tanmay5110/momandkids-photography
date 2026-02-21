@@ -12,9 +12,10 @@ export default function PreBirthdayPage() {
   return (
     <main className="min-h-screen bg-white">
       <GalleryHeader 
-        title="Pre-Birthday Gallery"
-        description="Magical moments before their big day - celebrating 1-2 years of pure joy"
+        title="Pre Birthday"
+        description="Toddling, babbling, and full of wonder — capturing the magic of 1–2 years before their very first birthday celebration."
         imageCount={images.length}
+        coverImage={images[0]}
       />
       <div className="container mx-auto px-4 py-12">
         <CloudinaryGallery ids={images} />

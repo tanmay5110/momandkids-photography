@@ -12,9 +12,10 @@ export default function FamilyShootPage() {
   return (
     <main className="min-h-screen bg-white">
       <GalleryHeader
-        title="Family Shoot Gallery"
-        description="Capturing the love and bond of your beautiful family"
+        title="Family"
+        description="The love, the laughter, the togetherness — family portraits that become treasured heirlooms for generations."
         imageCount={images.length}
+        coverImage={images[0]}
       />
       <div className="container mx-auto px-4 py-12">
         <CloudinaryGallery ids={images} />

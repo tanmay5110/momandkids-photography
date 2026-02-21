@@ -15,6 +15,7 @@ export default function CharvisBirthdayPage() {
         title="Charvis Birthday"
         description="A magical birthday celebration captured frame by frame"
         imageCount={images.length}
+        coverImage={images[0]}
       />
       <div className="container mx-auto px-4 py-12">
         <CloudinaryGallery ids={images} />

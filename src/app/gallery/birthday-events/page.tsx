@@ -66,16 +66,17 @@ export default function BirthdayEventsPage() {
   return (
     <main className="min-h-screen bg-white">
       <GalleryHeader
-        title="Birthday Events Gallery"
-        description="Capturing the magic of every birthday celebration"
+        title="Birthday Events"
+        description="Every birthday tells a unique story — browse our featured celebrations and relive the magic."
         imageCount={totalImages}
+        coverImage={charvisImages[0]}
       />
 
       <div className="container mx-auto px-4 py-12">
         {/* Intro */}
         <div className="text-center mb-12">
-          <p className="text-[#8B7355] uppercase tracking-widest text-sm font-medium mb-3">Select an Event</p>
-          <h2 className="text-3xl md:text-4xl font-light text-[#3E2723] mb-4">Our Birthday Shoots</h2>
+          <p className="text-[#8B7355] uppercase tracking-[0.25em] text-xs font-medium mb-3 font-sans">Select an Event</p>
+          <h2 className="text-3xl md:text-4xl font-light text-[#3E2723] mb-4 font-[family-name:var(--font-cormorant)] italic">Our Birthday Shoots</h2>
           <div className="w-16 h-px bg-[#D4A574] mx-auto mb-4"></div>
           <p className="text-[#6B5744] max-w-xl mx-auto text-sm leading-relaxed">
             Each birthday is a unique story. Browse our featured events and click to view the full gallery.
@@ -120,7 +121,7 @@ export default function BirthdayEventsPage() {
                 <div className="p-4">
                   <div className="flex items-center gap-2 mb-1">
                     <span className="text-lg">{event.emoji}</span>
-                    <h3 className="text-[#3E2723] font-semibold text-base">{event.title}</h3>
+                    <h3 className="text-[#3E2723] font-semibold text-base font-[family-name:var(--font-cormorant)]">{event.title}</h3>
                   </div>
                   <p className="text-[#8B7355] text-xs mb-3">{event.description}</p>
                   <span className="text-[#D4A574] text-xs font-medium uppercase tracking-wider">

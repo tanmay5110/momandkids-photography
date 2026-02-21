@@ -112,7 +112,7 @@ export default function Awards() {
       <div className="container mx-auto px-4">
         <div className="text-center mb-8">
           <p className="text-[#8B7355] mb-2 uppercase tracking-widest text-xs font-medium">Excellence</p>
-          <h2 className="text-2xl md:text-3xl font-light text-[#3E2723] mb-3">Professionally Certified</h2>
+          <h2 className="text-2xl md:text-3xl font-light text-[#3E2723] mb-3 font-[family-name:var(--font-cormorant)] italic">Professionally Certified</h2>
           <div className="w-12 h-px bg-[#D4A574] mx-auto mb-3"></div>
           <div className="flex items-center justify-center gap-2 text-sm font-light text-[#3E2723]">
             <Award className="text-[#D4A574]" size={16} />

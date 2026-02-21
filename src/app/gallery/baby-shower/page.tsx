@@ -12,9 +12,10 @@ export default function BabyShowerPage() {
   return (
     <main className="min-h-screen bg-white">
       <GalleryHeader 
-        title="Baby Shower Gallery"
-        description="Celebrating the joy of welcoming a new life"
+        title="Baby Shower"
+        description="Laughter, love, and celebration — documenting the beautiful moments as family and friends welcome a new life into the world."
         imageCount={babyShowerImages.length}
+        coverImage={babyShowerImages[0]}
       />
       <div className="container mx-auto px-4 py-12">
         <CloudinaryGallery ids={babyShowerImages} />

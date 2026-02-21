@@ -12,9 +12,10 @@ export default function CakeSmashPage() {
   return (
     <main className="min-h-screen bg-white">
       <GalleryHeader 
-        title="Cake Smash Gallery"
-        description="Sweet, messy, and absolutely adorable first birthday cake celebrations"
+        title="Cake Smash"
+        description="Sweet, messy, and absolutely adorable — the most fun a first birthday can be, beautifully captured in every frosting-covered smile."
         imageCount={images.length}
+        coverImage={images[0]}
       />
       <div className="container mx-auto px-4 py-12">
         <CloudinaryGallery ids={images} />

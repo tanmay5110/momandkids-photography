@@ -16,9 +16,10 @@ export default function KidsAbove2Page() {
   return (
     <main className="min-h-screen bg-white">
       <GalleryHeader 
-        title="Kids Above 2 Years Gallery"
-        description="Capturing the joy and energy of growing children"
+        title="Kids Above 2 Years"
+        description="Energy, curiosity, and endless personality — indoor studio and outdoor sessions that capture your child's unique spirit."
         imageCount={totalImages}
+        coverImage={indoorImages[0]}
       />
       <div className="container mx-auto px-4 py-12">
         <KidsAbove2Tabs 

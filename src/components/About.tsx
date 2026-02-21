@@ -31,7 +31,7 @@ export default function About() {
       
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-10 sm:mb-12 md:mb-16">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#3E2723] mb-4 sm:mb-6 px-4">About Us</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#3E2723] mb-4 sm:mb-6 px-4 font-[family-name:var(--font-cormorant)] italic">About Us</h2>
           <div className="w-12 sm:w-16 h-px bg-[#D4A574] mx-auto mb-4 sm:mb-6 md:mb-8"></div>
           <p className="text-sm sm:text-base md:text-lg text-[#6B5D52] max-w-2xl mx-auto leading-relaxed font-light px-4">
             We are Satish and Rohini, passionate about capturing life&apos;s most precious moments with artistic vision and professional expertise.
@@ -58,7 +58,7 @@ export default function About() {
               
               <div className="space-y-3 sm:space-y-4 px-2 text-center">
                 <div>
-                  <h3 className="text-2xl sm:text-3xl font-light text-[#3E2723] mb-1 sm:mb-2 tracking-wide">{photographer.name}</h3>
+                  <h3 className="text-2xl sm:text-3xl font-light text-[#3E2723] mb-1 sm:mb-2 tracking-wide font-[family-name:var(--font-cormorant)]">{photographer.name}</h3>
                   <p className="text-xs sm:text-sm text-[#8B7355] uppercase tracking-wider font-medium">
                     {photographer.role}
                   </p>

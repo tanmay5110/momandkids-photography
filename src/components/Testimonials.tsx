@@ -221,7 +221,7 @@ export default function Testimonials() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 mb-8 sm:mb-10 md:mb-12">
         <div className="text-center">
           <p className="text-[#8B7355] mb-2 sm:mb-3 uppercase tracking-widest text-xs sm:text-sm font-medium">Client Reviews</p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#3E2723] mb-4 sm:mb-6 px-4">What Our Clients Say</h2>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-light text-[#3E2723] mb-4 sm:mb-6 px-4 font-[family-name:var(--font-cormorant)] italic">What Our Clients Say</h2>
           <div className="w-12 sm:w-16 h-px bg-[#D4A574] mx-auto mb-4 sm:mb-6 md:mb-8"></div>
           <p className="text-sm sm:text-base text-[#6B5D52] max-w-2xl mx-auto font-light leading-relaxed px-4">
             We take pride in creating beautiful memories for our clients. Here&apos;s what they

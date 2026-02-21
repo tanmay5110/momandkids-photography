@@ -1,42 +1,21 @@
 'use client';
 
-import { Phone } from 'lucide-react';
+import { Phone, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import { useState, useEffect } from 'react';
+import { CldImage } from 'next-cloudinary';
 
 interface GalleryHeaderProps {
   title?: string;
   description?: string;
   imageCount?: number;
+  coverImage?: string;
 }
 
-const maternitySlides = [
-  {
-    image: 'maternity/856',
-    title: 'Celebrating Motherhood',
-    subtitle: 'Beautiful Moments, Timeless Memories',
-    description: 'Capturing the radiant glow and anticipation of your journey into motherhood',
-  },
-  {
-    image: 'maternity/801',
-    title: 'The Magic of Expecting',
-    subtitle: 'Cherishing Every Precious Moment',
-    description: 'Professional maternity photography that celebrates your beautiful transformation',
-  },
-  {
-    image: 'maternity/488',
-    title: 'Your Journey Begins',
-    subtitle: 'Elegant & Timeless Portraits',
-    description: 'Creating stunning portraits that honor this special chapter in your life',
-  },
-];
-
-export default function GalleryHeader({ title, description, imageCount }: GalleryHeaderProps) {
+export default function GalleryHeader({ title, description, imageCount, coverImage }: GalleryHeaderProps) {
   const [scrolled, setScrolled] = useState(false);
-  const [currentSlide, setCurrentSlide] = useState(0);
 
   useEffect(() => {
-    // Scroll to top when page loads
     window.scrollTo(0, 0);
     
     const handleScroll = () => {
@@ -45,18 +24,6 @@ export default function GalleryHeader({ title, description, imageCount }: Galler
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    if (imageCount) {
-      const timer = setInterval(() => {
-        setCurrentSlide((prev) => (prev + 1) % maternitySlides.length);
-      }, 6000);
-
-      return () => clearInterval(timer);
-    }
-  }, [imageCount]);
-
-  const slide = maternitySlides[currentSlide];
 
   return (
     <>
@@ -81,7 +48,6 @@ export default function GalleryHeader({ title, description, imageCount }: Galler
                 outline: 'none'
               }}
               onError={(e) => {
-                // Fallback to text if logo doesn't exist
                 e.currentTarget.style.display = 'none';
                 const fallback = e.currentTarget.nextElementSibling as HTMLElement;
                 if (fallback) fallback.style.display = 'block';
@@ -97,30 +63,10 @@ export default function GalleryHeader({ title, description, imageCount }: Galler
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-8">
-            <Link
-              href="/#home"
-              className="font-light text-sm tracking-wide text-gray-900 hover:text-[#D4A574] transition-colors duration-300"
-            >
-              Home
-            </Link>
-            <Link
-              href="/#about"
-              className="font-light text-sm tracking-wide text-gray-900 hover:text-[#D4A574] transition-colors duration-300"
-            >
-              About Us
-            </Link>
-            <Link
-              href="/#portfolio"
-              className="font-light text-sm tracking-wide text-gray-900 hover:text-[#D4A574] transition-colors duration-300"
-            >
-              Portfolio
-            </Link>
-            <Link
-              href="/#testimonials"
-              className="font-light text-sm tracking-wide text-gray-900 hover:text-[#D4A574] transition-colors duration-300"
-            >
-              Testimonials
-            </Link>
+            <Link href="/#home" className="font-light text-sm tracking-wide text-gray-900 hover:text-[#D4A574] transition-colors duration-300">Home</Link>
+            <Link href="/#about" className="font-light text-sm tracking-wide text-gray-900 hover:text-[#D4A574] transition-colors duration-300">About Us</Link>
+            <Link href="/#portfolio" className="font-light text-sm tracking-wide text-gray-900 hover:text-[#D4A574] transition-colors duration-300">Portfolio</Link>
+            <Link href="/#testimonials" className="font-light text-sm tracking-wide text-gray-900 hover:text-[#D4A574] transition-colors duration-300">Testimonials</Link>
           </nav>
 
           <a
@@ -134,26 +80,66 @@ export default function GalleryHeader({ title, description, imageCount }: Galler
         </div>
       </header>
 
-      {imageCount && (
-        <div className="relative w-full bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50 mt-16 md:mt-20 py-16 md:py-24">
-          <div className="container mx-auto px-4 text-center">
-            <div className="max-w-4xl mx-auto space-y-6">
-              <p className="text-sm md:text-base font-light tracking-widest uppercase text-pink-600">
-                Beautiful Moments, Timeless Memories
-              </p>
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-gray-900">
-                {title || 'Maternity Gallery'}
-              </h1>
-              <p className="text-base md:text-lg lg:text-xl font-light leading-relaxed text-gray-700 max-w-2xl mx-auto">
-                {description || 'Capturing the radiant glow and anticipation of your journey into motherhood'}
-              </p>
-              <p className="text-sm md:text-base text-gray-600 font-medium pt-4">
-                {imageCount} beautiful moments captured
-              </p>
+      {/* Hero Banner */}
+      <div className="relative w-full mt-16 md:mt-20 overflow-hidden" onContextMenu={(e) => e.preventDefault()}>
+        {/* Background cover image */}
+        <div className="relative h-[50vh] md:h-[60vh] w-full">
+          {coverImage ? (
+            <CldImage
+              src={coverImage}
+              fill
+              sizes="100vw"
+              alt={title || 'Gallery'}
+              className="object-cover"
+              quality="auto"
+              format="auto"
+              draggable={false}
+            />
+          ) : (
+            <div className="absolute inset-0 bg-gradient-to-br from-[#F5DEB3] via-[#E8D5B7] to-[#D4A574]" />
+          )}
+          
+          {/* Dark overlay for text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20 z-10" />
+          
+          {/* Content over image */}
+          <div className="absolute inset-0 z-20 flex items-end">
+            <div className="container mx-auto px-4 pb-10 md:pb-14">
+              {/* Back link */}
+              <Link 
+                href="/#portfolio" 
+                className="inline-flex items-center gap-2 text-white/70 hover:text-white text-sm mb-6 transition-colors font-sans"
+              >
+                <ArrowLeft size={16} />
+                <span>Back to Portfolio</span>
+              </Link>
+              
+              <div className="max-w-3xl">
+                <h1 className="text-4xl md:text-6xl lg:text-7xl font-semibold text-white font-[family-name:var(--font-cormorant)] italic tracking-tight leading-tight">
+                  {title || 'Gallery'}
+                </h1>
+                
+                {description && (
+                  <p className="text-white/80 text-base md:text-lg font-light mt-4 max-w-xl leading-relaxed font-sans">
+                    {description}
+                  </p>
+                )}
+                
+                {imageCount && (
+                  <div className="flex items-center gap-4 mt-6">
+                    <div className="flex items-center gap-2">
+                      <div className="w-8 h-px bg-[#D4A574]"></div>
+                      <span className="text-[#D4A574] text-sm font-medium tracking-wide font-sans">
+                        {imageCount} Photos
+                      </span>
+                    </div>
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 }

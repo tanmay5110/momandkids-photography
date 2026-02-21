@@ -12,9 +12,10 @@ export default function MaternityPage() {
   return (
     <main className="min-h-screen bg-white">
       <GalleryHeader 
-        title="Maternity Gallery"
-        description="Celebrating the beauty and joy of motherhood"
+        title="Maternity"
+        description="Celebrating the radiant glow, strength, and beauty of your journey into motherhood. Every moment is precious."
         imageCount={maternityImages.length}
+        coverImage={maternityImages[0]}
       />
       <div className="container mx-auto px-4 py-12">
         <CloudinaryGallery ids={maternityImages} />

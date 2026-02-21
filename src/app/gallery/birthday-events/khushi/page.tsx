@@ -15,6 +15,7 @@ export default function KhushiBirthdayPage() {
         title="Khushi Birthday"
         description="Pure joy and happiness, captured forever"
         imageCount={images.length}
+        coverImage={images[0]}
       />
       <div className="container mx-auto px-4 py-12">
         <CloudinaryGallery ids={images} />

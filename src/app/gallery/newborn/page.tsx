@@ -12,9 +12,10 @@ export default function NewbornPage() {
   return (
     <main className="min-h-screen bg-white">
       <GalleryHeader 
-        title="Newborn Gallery"
-        description="Capturing the precious first moments of your little one's life"
+        title="Newborn"
+        description="Those tiny fingers, peaceful yawns, and gentle curls — we preserve the fleeting magic of your baby's first days."
         imageCount={images.length}
+        coverImage={images[0]}
       />
       <div className="container mx-auto px-4 py-12">
         <CloudinaryGallery ids={images} />

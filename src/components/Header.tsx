@@ -45,7 +45,7 @@ export default function Header() {
             }}
           />
           <h1 
-            className={`text-base sm:text-lg md:text-xl font-light tracking-wider transition-colors duration-500 ${
+            className={`text-base sm:text-lg md:text-xl font-light tracking-wider transition-colors duration-500 font-[family-name:var(--font-cormorant)] ${
               scrolled ? 'text-gray-900' : 'text-white drop-shadow-lg'
             }`}
             style={{ display: 'none' }}

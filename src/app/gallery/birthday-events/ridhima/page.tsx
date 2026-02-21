@@ -15,6 +15,7 @@ export default function RidhimaBirthdayPage() {
         title="Ridhima Birthday"
         description="A beautiful birthday story told through our lens"
         imageCount={images.length}
+        coverImage={images[0]}
       />
       <div className="container mx-auto px-4 py-12">
         <CloudinaryGallery ids={images} />
