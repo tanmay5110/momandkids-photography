@@ -1,3 +1,5 @@
+'use client';
+
 import Link from 'next/link';
 import { CldImage } from 'next-cloudinary';
 import GalleryHeader from '@/components/GalleryHeader';
@@ -7,11 +9,11 @@ import khushiImages from '@/data/birthday-khushi.json';
 import namingImages from '@/data/birthday-naming.json';
 import ridhimaImages from '@/data/birthday-ridhima.json';
 
-export const metadata = {
-  title: 'Birthday Event Photography Gallery - Mom and Kids',
-  description: 'Beautiful birthday event photography capturing special celebrations. Professional birthday photoshoot in Pune.',
-  keywords: 'birthday photography, birthday event photos, kids birthday party, Pune birthday photographer',
-};
+// export const metadata = {
+//   title: 'Birthday Event Photography Gallery - Mom and Kids',
+//   description: 'Beautiful birthday event photography capturing special celebrations. Professional birthday photoshoot in Pune.',
+//   keywords: 'birthday photography, birthday event photos, kids birthday party, Pune birthday photographer',
+// };
 
 const events = [
   {
