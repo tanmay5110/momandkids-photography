@@ -87,7 +87,6 @@ export default function BirthdayEventsPage() {
               key={event.link}
               href={event.link}
               className="group block"
-              onContextMenu={(e) => e.preventDefault()}
             >
               <div className="relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 bg-[#F5DEB3] border-2 border-[#E8D5B7]">
                 {/* Cover Image */}
