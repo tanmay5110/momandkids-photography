@@ -76,7 +76,7 @@ export default function Portfolio() {
             <div key={index} className="group">
               <Link href={category.link} className="block">
                 <div
-                  className="relative overflow-hidden aspect-[4/3] cursor-pointer rounded-lg shadow-md hover:shadow-2xl bg-[#F5DEB3] transition-all duration-500"
+                  className="relative overflow-hidden aspect-[4/3] cursor-pointer bg-[#F5DEB3] transition-all duration-500"
                   onContextMenu={(e) => e.preventDefault()}
                 >
                   <CldImage
@@ -84,21 +84,17 @@ export default function Portfolio() {
                     alt={category.title}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 33vw, 320px"
-                    className="object-cover transition-all duration-700 group-hover:scale-110"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
                     draggable={false}
                   />
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 z-10" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent z-10" />
+                  {/* Subtle gradient for text readability */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent z-10" />
                   
                   {/* Title at bottom */}
-                  <div className="absolute bottom-0 left-0 right-0 p-4 lg:p-4 z-20">
-                    <h3 className="text-white text-lg sm:text-xl md:text-sm lg:text-base font-[family-name:var(--font-cormorant)] font-semibold tracking-wide drop-shadow-lg">
+                  <div className="absolute bottom-0 left-0 right-0 p-4 z-20">
+                    <h3 className="text-white text-lg md:text-sm lg:text-base font-[family-name:var(--font-cormorant)] font-semibold tracking-wide">
                       {category.title}
                     </h3>
-                    <span className="text-white/70 group-hover:text-white/90 text-xs uppercase tracking-[0.2em] transition-all duration-500 font-sans">
-                      View Gallery →
-                    </span>
                   </div>
                 </div>
               </Link>

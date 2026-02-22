@@ -28,8 +28,10 @@ export default function GalleryHeader({ title, description, imageCount, coverIma
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 bg-white shadow-lg transition-all duration-500 ${
-          scrolled ? 'py-2 md:py-2.5' : 'py-3 md:py-4'
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+          scrolled 
+            ? 'bg-white shadow-lg py-2 md:py-2.5' 
+            : 'bg-transparent py-3 md:py-4'
         }`}
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
@@ -54,7 +56,9 @@ export default function GalleryHeader({ title, description, imageCount, coverIma
               }}
             />
             <h1 
-              className="text-base sm:text-lg md:text-xl font-light tracking-wider text-gray-900"
+              className={`text-base sm:text-lg md:text-xl font-light tracking-wider transition-colors duration-500 font-[family-name:var(--font-cormorant)] ${
+                scrolled ? 'text-gray-900' : 'text-white drop-shadow-lg'
+              }`}
               style={{ display: 'none' }}
             >
               Mom and Kids
@@ -63,15 +67,19 @@ export default function GalleryHeader({ title, description, imageCount, coverIma
 
           {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-8">
-            <Link href="/#home" className="font-light text-sm tracking-wide text-gray-900 hover:text-[#D4A574] transition-colors duration-300">Home</Link>
-            <Link href="/#about" className="font-light text-sm tracking-wide text-gray-900 hover:text-[#D4A574] transition-colors duration-300">About Us</Link>
-            <Link href="/#portfolio" className="font-light text-sm tracking-wide text-gray-900 hover:text-[#D4A574] transition-colors duration-300">Portfolio</Link>
-            <Link href="/#testimonials" className="font-light text-sm tracking-wide text-gray-900 hover:text-[#D4A574] transition-colors duration-300">Testimonials</Link>
+            <Link href="/#home" className={`font-light text-sm tracking-wide transition-colors duration-300 ${scrolled ? 'text-gray-900 hover:text-[#D4A574]' : 'text-white hover:text-[#F5DEB3]'}`}>Home</Link>
+            <Link href="/#about" className={`font-light text-sm tracking-wide transition-colors duration-300 ${scrolled ? 'text-gray-900 hover:text-[#D4A574]' : 'text-white hover:text-[#F5DEB3]'}`}>About Us</Link>
+            <Link href="/#portfolio" className={`font-light text-sm tracking-wide transition-colors duration-300 ${scrolled ? 'text-gray-900 hover:text-[#D4A574]' : 'text-white hover:text-[#F5DEB3]'}`}>Portfolio</Link>
+            <Link href="/#testimonials" className={`font-light text-sm tracking-wide transition-colors duration-300 ${scrolled ? 'text-gray-900 hover:text-[#D4A574]' : 'text-white hover:text-[#F5DEB3]'}`}>Testimonials</Link>
           </nav>
 
           <a
             href="tel:+919321130477"
-            className="flex items-center gap-1 sm:gap-2 px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 border-2 border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white transition-all duration-500"
+            className={`flex items-center gap-1 sm:gap-2 px-3 sm:px-4 md:px-6 py-1.5 sm:py-2 border-2 transition-all duration-500 ${
+              scrolled
+                ? 'border-gray-900 text-gray-900 hover:bg-gray-900 hover:text-white'
+                : 'border-white text-white hover:bg-white hover:text-gray-900'
+            }`}
           >
             <Phone size={14} className="sm:w-4 sm:h-4" />
             <span className="font-light text-xs sm:text-sm hidden xs:inline">+91 9321130477</span>
@@ -80,8 +88,8 @@ export default function GalleryHeader({ title, description, imageCount, coverIma
         </div>
       </header>
 
-      {/* Hero Banner */}
-      <div className="relative w-full mt-16 md:mt-20 overflow-hidden" onContextMenu={(e) => e.preventDefault()}>
+      {/* Hero Banner — no top margin, sits behind transparent header */}
+      <div className="relative w-full overflow-hidden" onContextMenu={(e) => e.preventDefault()}>
         {/* Background cover image */}
         <div className="relative h-[50vh] md:h-[60vh] w-full">
           {coverImage ? (
