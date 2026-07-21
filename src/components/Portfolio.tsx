@@ -41,7 +41,7 @@ const portfolioCategories = [
   },
   {
     title: 'Baby Shower',
-    thumbnail: 'baby-shower/SVP00020NK',
+    thumbnail: 'baby-shower/SVP00730pbs',
     link: '/gallery/baby-shower',
   },
   {
