@@ -47,10 +47,10 @@ next-env.d.ts
 
 # Source photos (too large for git)
 new web site photo/
-new web sit v2 photo/
+new web sit v3 photo/
 
 # Compressed/processed photos (too large for git, stored in Cloudinary)
-compressed-v2/
+compressed-v3/
 
 # Compressed archives
 *.rar

@@ -6,7 +6,7 @@ const photographers = [
     role: 'Lead Photographer',
     specialization: 'Maternity & Newborn Specialist',
     description: 'With over a decade of experience, I specialize in capturing the beauty of motherhood and the innocence of newborns. My goal is to create timeless photographs that families will cherish forever.',
-    image: '/hero-slider/satish.jpg',
+    image: '/run/media/tanmaypatil/New Volume/PROJECTS/webiste momandkids/nextjs-photography/public/satishhero.jpg',
   },
   {
     name: 'Rohini',
