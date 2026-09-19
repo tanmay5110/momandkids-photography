@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "photos:update": "node scripts/sync-mom-and-kids.js",
     "sync:galleries": "node scripts/sync-all-galleries.js",
     "upload:galleries": "node scripts/upload-all-optimized.js"
   },
